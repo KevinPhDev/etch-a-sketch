@@ -7,6 +7,10 @@ function addNewSquare () {
     square.style.height = '25px';
     square.textContent = `${a}`;
     container.appendChild(square);
+    square.addEventListener('mouseenter', () =>
+    square.style.backgroundColor = 'yellow');
+    square.addEventListener('mouseleave', () =>
+    square.style.backgroundColor = '');
 }
 let a = 1
 for (let i = 0; i < 256; i++) {
