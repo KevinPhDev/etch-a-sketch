@@ -18,7 +18,7 @@ function addNewSquare() {
     square.textContent = `${a}`;
     container.appendChild(square);
     square.addEventListener('mouseenter', () =>
-    square.style.backgroundColor = 'yellow');
+    square.style.backgroundColor = '#' + randomColour());
     square.addEventListener('mouseleave', () =>
     square.style.backgroundColor = '');
 }
@@ -28,3 +28,7 @@ for (let i = 0; i < gridLength * gridLength; i++) {
     a++;
 }
 
+function randomColour() {
+    colour = Math.floor(Math.random()*16777215).toString(16);
+    return colour;
+}
