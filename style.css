@@ -2,7 +2,4 @@
     display: flex;
     flex: 1;
     flex-wrap: wrap;
-    max-width: 450px; 
-    /* Set max-width/height to ((squares per side + 2) * square width) */
-    max-height: 450px;
 }

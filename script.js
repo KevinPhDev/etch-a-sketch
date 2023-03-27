@@ -1,10 +1,20 @@
-function addNewSquare () {
-    const container = document.querySelector('#container');
+const container = document.querySelector('#container');
+const containerWidth = 595;
+const containerHeight = 595;
+const squareBorderWidth = 0.5;
+let gridLength = 16;
+const squareWidth = containerWidth / (gridLength + 2 * squareBorderWidth);
+let a = 1
+
+function addNewSquare() {
     const square = document.createElement('div');
+    container.style.maxWidth = `${containerWidth}px`;
+    container.style.maxHeight = `${containerHeight}px`;
     square.classList.add('square');
-    square.style.border = '1px solid black';
-    square.style.width = '25px';
-    square.style.height = '25px';
+    square.style.border = 'solid black';
+    square.style.borderWidth = `${squareBorderWidth}px`;
+    square.style.width = `${squareWidth}px`;
+    square.style.height = `${squareWidth}px`;
     square.textContent = `${a}`;
     container.appendChild(square);
     square.addEventListener('mouseenter', () =>
@@ -12,8 +22,9 @@ function addNewSquare () {
     square.addEventListener('mouseleave', () =>
     square.style.backgroundColor = '');
 }
-let a = 1
-for (let i = 0; i < 256; i++) {
+
+for (let i = 0; i < gridLength * gridLength; i++) {
     addNewSquare();
     a++;
 }
+
